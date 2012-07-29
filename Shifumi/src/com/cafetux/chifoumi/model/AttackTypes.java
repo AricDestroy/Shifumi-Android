@@ -42,11 +42,11 @@ public enum AttackTypes {
 	abstract public Boolean winAgainst(AttackTypes attack);
 
 	public static AttackTypes getCounterAttack(AttackTypes attack) {
+		AttackTypes result = STONE;
 
 		if (attack == null) {
-			return null;
+			return result;
 		}
-		AttackTypes result = null;
 		for (int i = 0; i < values().length; i++) {
 			Boolean winAgainst = values()[i].winAgainst(attack);
 			if (winAgainst != null && winAgainst) {

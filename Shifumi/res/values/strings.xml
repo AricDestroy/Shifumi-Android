@@ -7,7 +7,8 @@
     <string name="img_desc_leaf">Feuille</string>
     <string name="img_desc_rock">Cailloux</string>
     <string name="img_desc_scissor">Ciseaux</string>
-    <string name="play_ai">l\'ordinateur</string>
+    <string name="play_ai">Contre le téléphone</string>
+    <string name="play_pvp">En ligne</string>
     <string name="play_ai_random">Attaques aléatoire</string>
     <string name="play_ai_hard">Attaques stratégique</string>
     <string name="title_activity_result">Résultat</string>
@@ -17,6 +18,11 @@
     <string name="rock_label">la pierre</string>
     <string name="scissor_label">les ciseaux</string>
     <string name="title_activity_welcome">Menu</string>
-    <string name="play_against">Jouer contre:</string>
-
+    <string name="play_against">Jouer:</string>
+ 	<string name="result_nb_win">Victoires</string>
+    <string name="result_nb_consecutive_win">Série de victoire</string>
+    <string name="result_nb_draw">Egalités</string>
+    <string name="result_nb_games">Parties</string>
+    <string name="soon">Bientôt disponible</string>
+    
 </resources>

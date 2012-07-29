@@ -26,7 +26,6 @@ public class ShifumiMatchResolver {
 	public Boolean isPlayerWin() {
 		ennemyAttack = strategy.getEnemyAttack();
 		Log.d("debug", "enemy:" + ennemyAttack);
-
 		Boolean playerWin = playerAttack.winAgainst(ennemyAttack);
 		Log.d("debug", "win:" + playerWin);
 
@@ -39,7 +38,7 @@ public class ShifumiMatchResolver {
 
 		StringBuilder res = new StringBuilder();
 		if (playerAttack.winAgainst(ennemyAttack) == null) {
-			res.append("égalité");
+			res.append("Match Null !");
 		} else {
 			res.append(playerAttack.winAgainst(ennemyAttack) ? "Gagné"
 					: "Perdu");

@@ -4,41 +4,133 @@
     android:layout_height="wrap_content"
     android:gravity="center_horizontal" >
 
-   
+    <TextView
+        android:id="@+id/resultString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold|italic"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="26dp"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/imageButtonHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="32dp"
+            android:contentDescription="@string/btn_home"
+            android:src="@drawable/home" />
+
+        <ImageButton
+            android:id="@+id/imageButtonRetry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="32dp"
+            android:contentDescription="@string/btn_retry"
+            android:src="@drawable/back" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutGames"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/resultString"
+        android:layout_marginTop="17dp"
+        android:orientation="horizontal" >
+
         <TextView
-            android:id="@+id/resultString"
+            android:id="@+id/textNbGamesName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:text="@string/result_nb_games"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
-        <LinearLayout
-            android:id="@+id/linearLayoutButtons"
+        <TextView
+            android:id="@+id/textNbGamesValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginBottom="26dp"
-            android:orientation="horizontal" >
+            android:layout_marginLeft="12dp"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </LinearLayout>
 
-            <ImageButton
-                android:id="@+id/imageButtonHome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="18dp"
-                android:layout_marginTop="32dp"
-                android:contentDescription="@string/btn_home"
-                android:src="@drawable/home" />
+    <LinearLayout
+        android:id="@+id/linearLayoutWins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayoutGames"
+        android:layout_marginTop="17dp"
+        android:orientation="horizontal" >
 
-            <ImageButton
-                android:id="@+id/imageButtonRetry"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="18dp"
-                android:layout_marginTop="32dp"
-                android:contentDescription="@string/btn_retry"
-                android:src="@drawable/back" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/textNbWinName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/result_nb_win"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
-   
+        <TextView
+            android:id="@+id/textNbWinValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/linearLayoutDraw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayoutWins"
+        android:layout_alignLeft="@+id/linearLayoutWins"
+        android:layout_marginTop="17dp"
+        android:orientation="horizontal" >
+ 
+        <TextView
+            android:id="@+id/textNbDrawsName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/result_nb_draw"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/textNbDrawValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutConsecutiveWins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayoutDraw"
+        android:layout_marginTop="17dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/textNbConsecutiveWinName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/result_nb_consecutive_win"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/textNbConsecutiveWinValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+    
 </RelativeLayout>

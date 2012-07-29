@@ -31,7 +31,7 @@ public class AiStrategyFactory {
 
 	}
 
-	private static DIFFICULTY AI_LEVEL = DIFFICULTY.NORMAL;
+	private static DIFFICULTY AI_LEVEL = DIFFICULTY.HARD;
 
 	public static EnemyStrategy getStrategy() {
 		return AI_LEVEL.getStrategy();

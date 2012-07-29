@@ -29,10 +29,54 @@ public class ResultActivity extends Activity {
 		setContentView(R.layout.activity_result);
 		ProgressDialog dialog = ProgressDialog.show(ResultActivity.this, "",
 				"En attente de l'adversaire", true);
-
+		dialog.show();
 		Serializable attackExtra = getIntent().getSerializableExtra("attack");
 		resultText = (TextView) findViewById(R.id.resultString);
 		homeButton = (ImageButton) findViewById(R.id.imageButtonHome);
+
+		initPlayAgainButton();
+		initHomeButton();
+		retrieveAttackAndResolveMatch(attackExtra);
+
+		TextView nbDrawLabelValue = (TextView) findViewById(R.id.textNbDrawValue);
+		nbDrawLabelValue.setText(String.valueOf(Memory.getNbDraw()));
+
+		TextView nbWinLabelValue = (TextView) findViewById(R.id.textNbWinValue);
+		nbWinLabelValue.setText(String.valueOf(Memory.getNbWin()));
+
+		TextView nbGamesLabelValue = (TextView) findViewById(R.id.textNbGamesValue);
+		nbGamesLabelValue.setText(String.valueOf(Memory.getNbGames()));
+
+		TextView nbConsecutiveGameLabelValue = (TextView) findViewById(R.id.textNbConsecutiveWinValue);
+		nbConsecutiveGameLabelValue.setText(String.valueOf(Memory
+				.getNbConsecutiveWin()));
+		dialog.hide();
+	}
+
+	private void retrieveAttackAndResolveMatch(Serializable attackExtra) {
+		if (attackExtra instanceof AttackTypes) {
+			playerChoice = (AttackTypes) attackExtra;
+			resolveMatch();
+		} else {
+			Toast.makeText(ResultActivity.this,
+					"Nous avons perdu votre attaque en route..désolé",
+					Toast.LENGTH_SHORT).show();
+		}
+	}
+
+	private void initHomeButton() {
+		homeButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(ResultActivity.this,
+						WelcomeActivity.class);
+				startActivity(intent);
+			}
+		});
+	}
+
+	private void initPlayAgainButton() {
 		retryButton = (ImageButton) findViewById(R.id.imageButtonRetry);
 		retryButton.setOnClickListener(new OnClickListener() {
 
@@ -41,17 +85,6 @@ public class ResultActivity extends Activity {
 				resetGame();
 			}
 		});
-
-		if (attackExtra instanceof AttackTypes) {
-			playerChoice = (AttackTypes) attackExtra;
-
-			resolveMatch();
-		} else {
-			Toast.makeText(ResultActivity.this,
-					"Nous avons perdu votre attaque en route..désolé",
-					Toast.LENGTH_SHORT).show();
-		}
-		dialog.hide();
 	}
 
 	private void resolveMatch() {

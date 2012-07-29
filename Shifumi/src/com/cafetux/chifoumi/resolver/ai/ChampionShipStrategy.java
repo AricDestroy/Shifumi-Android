@@ -26,29 +26,47 @@ public class ChampionShipStrategy implements EnemyStrategy {
 		if (firstCall) {
 			Log.d("debug", "first call");
 			firstCall = false;
+
+			Log.d("Strategy", "isFIRST");
 			return returnValue(getFistAttack());
 		}
+		Log.d("Strategy", "hasDoubleRock:" + Memory.getPreviousAttack()
+				+ Memory.getPreviousAttack(1));
+
 		if (hasDoubleRock()) {
+			Log.d("Strategy", "hasDoubleRock");
 			return returnValue(AttackTypes.STONE);
 		}
 		if (Memory.playerWinPreviously() == null) {
-			return returnValue(AttackTypes.getCounterAttack(Memory
-					.getPreviousAttack()));
+
+			Log.d("Strategy",
+					"previously DRAW: joue le contre du contre du draw");
+			return returnValue(AttackTypes.getCounterAttack(AttackTypes
+					.getCounterAttack(Memory.getPreviousAttack())));
 		}
 		if (!Memory.playerWinPreviously() && RANDOM.nextInt(3) != 2) {
+			Log.d("Strategy", "player Lose Previously (et random)");
 			AttackTypes response = null;
 			response = AttackTypes.getCounterAttack(Memory.getPreviousAttack());
 			return returnValue(response);
 		}
-		if (RANDOM.nextInt(5) < 3) {
+		if (RANDOM.nextInt(4) == 3) {
+			Log.d("Strategy", "random Papier");
+
 			return returnValue(AttackTypes.PAPER);
 		}
-		return returnValue(randomStrategy.getEnemyAttack());
+		Log.d("Strategy", "default attack");
+
+		return returnValue(getDefaultAttack());
+	}
+
+	private AttackTypes getDefaultAttack() {
+		return AttackTypes.getCounterAttack(Memory.getMostAttackChoiced());
 	}
 
 	private AttackTypes returnValue(AttackTypes attack) {
 		if (attack == null) {
-			randomStrategy.getEnemyAttack();
+			getDefaultAttack();
 		}
 		aiPreviousAttacks.add(attack);
 		return attack;

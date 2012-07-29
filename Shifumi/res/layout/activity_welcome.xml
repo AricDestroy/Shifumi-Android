@@ -24,4 +24,14 @@
         android:layout_marginTop="42dp"
         android:text="@string/play_ai" />
 
+    <Button
+        android:id="@+id/pvp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/playAi"
+        android:layout_alignRight="@+id/playAi"
+        android:layout_below="@+id/playAi"
+        android:layout_marginTop="12dp"
+        android:text="@string/play_pvp" />
+
 </RelativeLayout>
