@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal" >
+
+   
+        <TextView
+            android:id="@+id/resultString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="26dp"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/imageButtonHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="32dp"
+                android:contentDescription="@string/btn_home"
+                android:src="@drawable/home" />
+
+            <ImageButton
+                android:id="@+id/imageButtonRetry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="32dp"
+                android:contentDescription="@string/btn_retry"
+                android:src="@drawable/back" />
+        </LinearLayout>
+
+   
+
+</RelativeLayout>

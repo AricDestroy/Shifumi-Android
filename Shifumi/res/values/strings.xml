@@ -1,0 +1,22 @@
+<resources>
+
+    <string name="app_name">Shifumi</string>
+    <string name="choice_title">Choisis ton action</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_player_choice">Choix de l\'attaque</string>
+    <string name="img_desc_leaf">Feuille</string>
+    <string name="img_desc_rock">Cailloux</string>
+    <string name="img_desc_scissor">Ciseaux</string>
+    <string name="play_ai">l\'ordinateur</string>
+    <string name="play_ai_random">Attaques aléatoire</string>
+    <string name="play_ai_hard">Attaques stratégique</string>
+    <string name="title_activity_result">Résultat</string>
+    <string name="btn_retry">retour</string>
+    <string name="btn_home">Acceuil</string>
+    <string name="paper_label">le papier</string>
+    <string name="rock_label">la pierre</string>
+    <string name="scissor_label">les ciseaux</string>
+    <string name="title_activity_welcome">Menu</string>
+    <string name="play_against">Jouer contre:</string>
+
+</resources>
